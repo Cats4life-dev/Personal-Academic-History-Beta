@@ -1,37 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="/home/erlan-dalinuxgod/Documents/GitHub/Personal-Academic-History-Beta/charts.min.css">
-    </head>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
 
-<table class="charts-css line" id="Spring 2023">
-  
-     <tbody>
-    <tr>
-      <td style="--start: 0.0; --size: 0.4"> <span class="data"> $ 40K </span> </td>
-    </tr>
-    <tr>
-      <td style="--start: 0.4; --size: 0.2"> <span class="data"> $ 20K </span> </td>
-    </tr>
-    <tr>
-      <td style="--start: 0.2; --size: 0.6"> <span class="data"> $ 60K </span> </td>
-    </tr>
-    <tr>
-      <td style="--start: 0.6; --size: 0.4"> <span class="data"> $ 40K </span> </td>
-    </tr>
-    <tr>
-      <td style="--start: 0.4; --size: 0.8"> <span class="data"> $ 80K </span> </td>
-    </tr>
-    <tr>
-      <td style="--start: 0.8; --size: 0.6"> <span class="data"> $ 60K </span> </td>
-    </tr>
-    <tr>
-      <td style="--start: 0.6; --size: 1.0"> <span class="data"> $ 100K </span> </td>
-    </tr>
-  </tbody>
-    
-    
-</table>
-    
- 
+<div id="myPlot" style="width:100%;max-width:700px"></div>
 
+<script>
+var xArray = [50,60,70,80,90,100,110,120,130,140,150];a
+var yArray = [7,8,8,9,9,9,10,11,14,14,15];
+
+// Define Data
+var data = [{
+  x: xArray,
+  y: yArray,
+  mode:"lines"
+}];
+
+// Define Layout
+var layout = {
+  xaxis: {range: [40, 160], title: "Square Meters"},
+  yaxis: {range: [5, 16], title: "Price in Millions"},
+  title: "House Prices vs. Size"
+};
+
+// Display using Plotly
+Plotly.newPlot("myPlot", data, layout);
+</script>
+
+</body>
+</html>
